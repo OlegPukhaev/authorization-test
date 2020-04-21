@@ -1,8 +1,75 @@
 .mainContainer {
   width: 100%;
   height: 100%;
-  /* background-color: green; */
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+
+.mainHeader {
+  width: 100%;
+  background-color: tan;
+  color: white;
+  background-color: rgb(101, 101, 167);
+}
+
+.mainSection {
+  width: 100%;
+  flex-grow: 1;
+}
+
+.mainSection__login {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.loginForm {
+  width: 350px;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 8px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.loginForm h2 {
+  width: 100%;
+  text-align: left;
+  padding: 8px;
+}
+
+.loginForm form {
+  padding: 8px;
+}
+
+.loginForm input {
+  display: block;
+  width: 100%;
+  border: 1px solid #222;
+  outline: none;
+  border-radius: 8px;
+  line-height: 2rem;
+  padding: 8px;
+  margin: 8px 0;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.loginForm button {
+  display: block;
+  width: 100%;
+  border: 1px solid #222;
+  background-color: green;
+  color: white;
+  outline: none;
+  border-radius: 8px;
+  line-height: 2rem;
+  padding: 8px;
+  margin: 8px 0;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
 }
