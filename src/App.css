@@ -27,13 +27,16 @@
 
 .mainNavigation_item {
   display: inline-block;
-  padding: 16px;
-  cursor: pointer;
 }
-
-.mainNavigation_item:hover {
-  background-color: white;
+.linkStyle {
+  padding: 16px;
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+}
+.linkStyle:hover {
   color: rgb(101, 101, 167);
+  background-color: white;
 }
 
 .mainSection {
