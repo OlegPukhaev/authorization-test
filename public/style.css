@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
   /* line-height: 0; */
 }
 
@@ -16,10 +17,8 @@ body {
   text-align: center;
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
-  /* background-color: seagreen; */
 }
 
 #root {
-  /* background-color: salmon; */
   height: 100%;
 }

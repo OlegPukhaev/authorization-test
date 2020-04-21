@@ -6,6 +6,13 @@ function App() {
     <div className="mainContainer">
       <header className="mainHeader">
         <h1>Header</h1>
+        <nav className="mainNavigation">
+          <ul className="mainNavigation_items">
+            <li className="mainNavigation_item">Login</li>
+            <li className="mainNavigation_item">Register</li>
+            <li className="mainNavigation_item">Profile</li>
+          </ul>
+        </nav>
       </header>
       <section className="mainSection">
         <section className="mainSection__login">
@@ -18,7 +25,7 @@ function App() {
             </form>
           </div>
         </section>
-        <section className="mainSection__register">
+        <section className="mainSection__register hide">
           <div className="formContainer">
             <h2>Login:</h2>
             <form>
@@ -30,7 +37,7 @@ function App() {
             </form>
           </div>
         </section>
-        <section className="mainSection__profile">
+        <section className="mainSection__profile hide">
           <h1>Profile page:</h1>
           <div className="fakeImage"></div>
           <article>

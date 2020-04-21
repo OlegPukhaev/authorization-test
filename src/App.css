@@ -9,9 +9,31 @@
 
 .mainHeader {
   width: 100%;
+  display: flex;
+  flex-direction: row;
   background-color: tan;
   color: white;
   background-color: rgb(101, 101, 167);
+}
+
+.mainHeader h1 {
+  padding: 7px;
+}
+
+.mainNavigation {
+  flex-grow: 1;
+  text-align: right;
+}
+
+.mainNavigation_item {
+  display: inline-block;
+  padding: 16px;
+  cursor: pointer;
+}
+
+.mainNavigation_item:hover {
+  background-color: white;
+  color: rgb(101, 101, 167);
 }
 
 .mainSection {
@@ -21,8 +43,7 @@
 
 .mainSection__login,
 .mainSection__register {
-  display: none;
-  /* display: flex; */
+  display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
@@ -44,6 +65,10 @@
   border: 1px solid black;
   border-radius: 8px;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.hide {
+  display: none;
 }
 
 .formContainer h2 {
