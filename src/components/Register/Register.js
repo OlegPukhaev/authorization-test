@@ -22,7 +22,7 @@ function Register({ onChangeUpdateForm, onClickSubmitForm, data }) {
           />
           <input
             name="password"
-            type="password"
+            type="current-password"
             placeholder="Password"
             onChange={onChangeUpdateForm}
             value={data.password}
