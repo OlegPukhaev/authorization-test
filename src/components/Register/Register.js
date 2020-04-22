@@ -1,6 +1,6 @@
 import React from "react";
 
-function Register({ onChangeUpdateForm, onClickSubmitForm }) {
+function Register({ onChangeUpdateForm, onClickSubmitForm, data }) {
   return (
     <section className="mainSection__register">
       <div className="formContainer">
@@ -11,24 +11,21 @@ function Register({ onChangeUpdateForm, onClickSubmitForm }) {
             type="email"
             placeholder="E-mail"
             onChange={onChangeUpdateForm}
+            value={data.email}
           />
           <input
             name="name"
             type="text"
             placeholder="Name"
             onChange={onChangeUpdateForm}
+            value={data.name}
           />
           <input
             name="password"
             type="password"
             placeholder="Password"
             onChange={onChangeUpdateForm}
-          />
-          <input
-            name="password-c"
-            type="new-password"
-            placeholder="Confirm password"
-            onChange={onChangeUpdateForm}
+            value={data.password}
           />
           <button type="submit">Login</button>
         </form>

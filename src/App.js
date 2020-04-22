@@ -6,16 +6,23 @@ import Profile from "./components/Profile";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 function App() {
-  const [data, formDataUpdate] = useState({});
+  const [data, formDataUpdate] = useState({
+    email: "",
+    name: "",
+    password: "",
+  });
 
   const onChangeUpdateForm = (e) => {
     formDataUpdate({ ...data, [e.target.name]: e.target.value });
-    // console.log("Some data", data);
   };
 
   const onClickSubmitForm = (e) => {
     e.preventDefault();
-    console.log("submit Data", data);
+    let newData = {};
+    for (let prop in data) {
+      newData = { ...newData, [prop]: "" };
+    }
+    formDataUpdate({ ...data, ...newData });
   };
 
   return (
@@ -52,6 +59,7 @@ function App() {
               <Register
                 onChangeUpdateForm={onChangeUpdateForm}
                 onClickSubmitForm={onClickSubmitForm}
+                data={data}
               />
             </Route>
             <Route path="/profile">
