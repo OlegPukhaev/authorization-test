@@ -1,15 +1,35 @@
 import React from "react";
 
-function Register() {
+function Register({ onChangeUpdateForm, onClickSubmitForm }) {
   return (
     <section className="mainSection__register">
       <div className="formContainer">
         <h2>Login:</h2>
-        <form>
-          <input type="email" placeholder="E-mail" />
-          <input type="text" placeholder="Name" />
-          <input type="password" placeholder="Password" />
-          <input type="new-password" placeholder="Confirm password" />
+        <form onSubmit={onClickSubmitForm}>
+          <input
+            name="email"
+            type="email"
+            placeholder="E-mail"
+            onChange={onChangeUpdateForm}
+          />
+          <input
+            name="name"
+            type="text"
+            placeholder="Name"
+            onChange={onChangeUpdateForm}
+          />
+          <input
+            name="password"
+            type="password"
+            placeholder="Password"
+            onChange={onChangeUpdateForm}
+          />
+          <input
+            name="password-c"
+            type="new-password"
+            placeholder="Confirm password"
+            onChange={onChangeUpdateForm}
+          />
           <button type="submit">Login</button>
         </form>
       </div>
