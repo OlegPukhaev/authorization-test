@@ -5,6 +5,10 @@ import Register from "./components/Register";
 import Profile from "./components/Profile";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
+import { connect } from "react-redux";
+import * as actions from "./actions";
+// import { bindActionCreators } from "redux";
+
 function App() {
   const [data, formDataUpdate] = useState({
     email: "",
@@ -23,7 +27,7 @@ function App() {
       newData = { ...newData, [prop]: "" };
     }
     formDataUpdate({ ...data, ...newData });
-    console.log("Form:" , newData);
+    console.log("Form:", data);
   };
 
   return (
@@ -73,4 +77,14 @@ function App() {
   );
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  return {
+    counter: state,
+  };
+};
+
+// const mapDispatchToProps = (dispatch) => {
+//   return bindActionCreators(actions, dispatch);
+// };
+
+export default connect(mapStateToProps, actions)(App);

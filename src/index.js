@@ -2,11 +2,18 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
+import { createStore, bindActionCreators } from "redux";
+import { Provider } from "react-redux";
+import reducer from "./reducer";
 
-ReactDOM.render(<App />, document.getElementById("root"));
-// ReactDOM.render(
-//   <React.StrictMode>
-//     <App />
-//   </React.StrictMode>,
-//   document.getElementById("root")
-// );
+const store = createStore(reducer);
+const { dispatch } = store;
+
+// const { inc, dec } = bindActionCreators(actions, dispatch);
+
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById("root")
+);

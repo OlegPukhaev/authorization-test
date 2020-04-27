@@ -5,7 +5,7 @@ function Profile() {
     <section className="mainSection__profile">
       <h1>Profile page:</h1>
       <div className="fakeImage"></div>
-      <article>
+      <article class="profile_article">
         <ul className="profile">
           <li>
             <span>Name:</span> Oleg
