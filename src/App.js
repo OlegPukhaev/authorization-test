@@ -23,6 +23,7 @@ function App() {
       newData = { ...newData, [prop]: "" };
     }
     formDataUpdate({ ...data, ...newData });
+    console.log("Form:" , newData);
   };
 
   return (
