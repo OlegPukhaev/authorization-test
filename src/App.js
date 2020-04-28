@@ -16,7 +16,13 @@ import * as actionCreator from "./actions";
 // import { bindActionCreators } from "redux";
 
 const fakeAuth = {
-  isAuthenticated: false,
+  isAuthenticated: true,
+  login() {
+    this.isAuthenticated = true;
+  },
+  signOut() {
+    this.isAuthenticated = false;
+  },
 };
 
 function App({ userInfo, addUser }) {
