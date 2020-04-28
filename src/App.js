@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import "./App.css";
+import { connect } from "react-redux";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import Profile from "./components/Profile";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
-import { connect } from "react-redux";
 import * as actions from "./actions";
 // import { bindActionCreators } from "redux";
 
-function App() {
+function App({ userInfo, addUser }) {
   const [data, formDataUpdate] = useState({
     email: "",
     name: "",
@@ -28,6 +28,7 @@ function App() {
     }
     formDataUpdate({ ...data, ...newData });
     console.log("Form:", data);
+    addUser(data);
   };
 
   return (
@@ -68,7 +69,7 @@ function App() {
               />
             </Route>
             <Route path="/profile">
-              <Profile />
+              <Profile {...userInfo} />
             </Route>
           </Switch>
         </section>
@@ -79,12 +80,8 @@ function App() {
 
 const mapStateToProps = (state) => {
   return {
-    counter: state,
+    userInfo: state.userInfo,
   };
 };
-
-// const mapDispatchToProps = (dispatch) => {
-//   return bindActionCreators(actions, dispatch);
-// };
 
 export default connect(mapStateToProps, actions)(App);

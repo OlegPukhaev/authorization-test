@@ -1,29 +1,23 @@
 import React from "react";
 
-function Profile() {
+function Profile({ name, email, info }) {
+  console.log("Redux data", name);
+  // const {name, email, info}
   return (
     <section className="mainSection__profile">
       <h1>Profile page:</h1>
-      <div className="fakeImage"></div>
-      <article class="profile_article">
+      {/* <div className="fakeImage"></div> */}
+      <article className="profile_article">
         <ul className="profile">
           <li>
-            <span>Name:</span> Oleg
+            <span>Name:</span> {name}
           </li>
           <li>
-            <span>Email:</span> oleg@gmail.com
+            <span>Email:</span> {email}
           </li>
           <li>
             <span>Info:</span>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
+            <p>{info}</p>
           </li>
         </ul>
       </article>
