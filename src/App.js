@@ -1,13 +1,25 @@
 import React, { useState } from "react";
 import "./App.css";
 import { connect } from "react-redux";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  Redirect,
+  useHistory,
+  useLocation,
+} from "react-router-dom";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import Profile from "./components/Profile";
 
-import * as actions from "./actions";
+import * as actionCreator from "./actions";
 // import { bindActionCreators } from "redux";
+
+const fakeAuth = {
+  isAuthenticated: true,
+};
 
 function App({ userInfo, addUser }) {
   const [data, formDataUpdate] = useState({
@@ -84,4 +96,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, actions)(App);
+export default connect(mapStateToProps, actionCreator)(App);
