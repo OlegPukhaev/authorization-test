@@ -7,8 +7,6 @@ import {
   Route,
   Link,
   Redirect,
-  useHistory,
-  useLocation,
 } from "react-router-dom";
 import Login from "./components/Login";
 import Register from "./components/Register";
@@ -18,7 +16,7 @@ import * as actionCreator from "./actions";
 // import { bindActionCreators } from "redux";
 
 const fakeAuth = {
-  isAuthenticated: true,
+  isAuthenticated: false,
 };
 
 function App({ userInfo, addUser }) {
@@ -71,7 +69,11 @@ function App({ userInfo, addUser }) {
         <section className="mainSection">
           <Switch>
             <Route path="/login">
-              <Login />
+              {fakeAuth.isAuthenticated ? (
+                <Redirect to="/profile" />
+              ) : (
+                <Login />
+              )}
             </Route>
             <Route path="/register">
               <Register
@@ -81,6 +83,11 @@ function App({ userInfo, addUser }) {
               />
             </Route>
             <Route path="/profile">
+              {!fakeAuth.isAuthenticated ? (
+                <Redirect to="/login" />
+              ) : (
+                <Profile {...userInfo} />
+              )}
               <Profile {...userInfo} />
             </Route>
           </Switch>
