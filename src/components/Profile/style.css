@@ -28,8 +28,12 @@
 }
 
 .avatar img {
-  height: 100%;
-  object-fit: contain;
+  width: 100%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  /* object-position: center; */
+  object-fit: cover;
 }
 
 .profile {
@@ -45,7 +49,7 @@
 .profile li span {
   font-weight: bold;
 }
-
+/* 
 #object_position {
   object-position: -94px;
-}
+} */
