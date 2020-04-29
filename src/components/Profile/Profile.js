@@ -7,7 +7,7 @@ function Profile({ name, email, info }) {
     <section className="mainSection__profile">
       <article className="profile_article">
         <figure className="avatar">
-          <img src={avatarImg} alt={name} />
+          <img id="object_position" src={avatarImg} alt={name} />
         </figure>
         <ul className="profile">
           <li>
