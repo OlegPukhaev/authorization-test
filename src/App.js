@@ -79,7 +79,6 @@ function App({ userInfo, addUser, isAuthenticated, signIn, signOut }) {
               ) : (
                 <Profile {...userInfo} />
               )}
-              <Profile {...userInfo} />
             </Route>
           </Switch>
         </section>

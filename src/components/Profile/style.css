@@ -1,0 +1,43 @@
+.fakeImage {
+  width: 250px;
+  height: 300px;
+  background-color: gray;
+}
+
+.mainSection__profile h1 {
+  font-size: 32px;
+  padding: 16px 0px;
+}
+
+.profile_article {
+  display: flex;
+  flex-direction: row;
+  /* flex-wrap: wrap; */
+  width: 100%;
+}
+
+.profile_article figure {
+  /* width: 30%; */
+  /* background-color: red; */
+  padding: 16px;
+  /* flex-grow: 1; */
+}
+
+.avatar img {
+  width: 100%;
+}
+
+.profile {
+  /* flex-grow: 2; */
+  list-style-type: none;
+  text-align: left;
+  padding: 16px;
+}
+
+.profile li {
+  padding: 8px 0;
+}
+
+.profile li span {
+  font-weight: bold;
+}

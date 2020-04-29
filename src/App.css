@@ -112,32 +112,3 @@
   font-weight: bold;
   cursor: pointer;
 }
-
-.fakeImage {
-  width: 250px;
-  height: 300px;
-  background-color: gray;
-}
-
-.profile {
-  width: 250px;
-  list-style-type: none;
-  text-align: left;
-}
-
-.profile li {
-  padding: 8px 0;
-}
-
-.profile li span {
-  font-weight: bold;
-}
-
-.mainSection__profile h1 {
-  font-size: 32px;
-  padding: 16px 0px;
-}
-
-.profile_article {
-  width: 100%;
-}

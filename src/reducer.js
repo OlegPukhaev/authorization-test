@@ -1,5 +1,5 @@
 const initialState = {
-  isAuthenticated: false,
+  isAuthenticated: true,
   userInfo: {
     name: "Oleg",
     email: "oleg@gmail.com",
