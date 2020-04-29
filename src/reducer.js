@@ -1,4 +1,5 @@
 const initialState = {
+  isAuthenticated: false,
   userInfo: {
     name: "Oleg",
     email: "oleg@gmail.com",
@@ -8,7 +9,6 @@ const initialState = {
 };
 
 const reducer = (state = initialState, action) => {
-  console.log("action here", action);
   const { value } = action;
   switch (action.type) {
     case "ADD":
@@ -21,6 +21,10 @@ const reducer = (state = initialState, action) => {
         ...state,
         userInfo: newObject,
       });
+    case "SIGN_IN":
+      return { ...state, isAuthenticated: true };
+    case "SIGN_OUT":
+      return { ...state, isAuthenticated: false };
     default:
       return state;
   }

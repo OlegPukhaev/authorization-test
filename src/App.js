@@ -5,7 +5,6 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link,
   Redirect,
 } from "react-router-dom";
 import Login from "./components/Login";
@@ -14,19 +13,8 @@ import Profile from "./components/Profile";
 import Header from "./components/Header";
 
 import * as actionCreator from "./actions";
-// import { bindActionCreators } from "redux";
 
-const fakeAuth = {
-  isAuthenticated: false,
-  login() {
-    this.isAuthenticated = true;
-  },
-  signOut() {
-    this.isAuthenticated = false;
-  },
-};
-
-function App({ userInfo, addUser }) {
+function App({ userInfo, addUser, isAuthenticated, signIn, signOut }) {
   const [data, formDataUpdate] = useState({
     email: "",
     name: "",
@@ -44,32 +32,49 @@ function App({ userInfo, addUser }) {
       newData = { ...newData, [prop]: "" };
     }
     formDataUpdate({ ...data, ...newData });
-    console.log("Form:", data);
     addUser(data);
+    signIn();
+  };
+
+  const onClickSignIn = (e) => {
+    e.preventDefault();
+    signIn();
+  };
+
+  const onClickSignOut = (e) => {
+    e.preventDefault();
+    signOut();
   };
 
   return (
     <Router>
       <div className="mainContainer">
-        <Header fakeAuth={fakeAuth} />
+        <Header
+          isAuthenticated={isAuthenticated}
+          onClickSignOut={onClickSignOut}
+        />
         <section className="mainSection">
           <Switch>
             <Route path="/login">
-              {fakeAuth.isAuthenticated ? (
+              {isAuthenticated ? (
                 <Redirect to="/profile" />
               ) : (
-                <Login />
+                <Login onClickSignIn={onClickSignIn} />
               )}
             </Route>
             <Route path="/register">
-              <Register
-                onChangeUpdateForm={onChangeUpdateForm}
-                onClickSubmitForm={onClickSubmitForm}
-                data={data}
-              />
+              {isAuthenticated ? (
+                <Redirect to="/profile" />
+              ) : (
+                <Register
+                  onChangeUpdateForm={onChangeUpdateForm}
+                  onClickSubmitForm={onClickSubmitForm}
+                  data={data}
+                />
+              )}
             </Route>
             <Route path="/profile">
-              {!fakeAuth.isAuthenticated ? (
+              {!isAuthenticated ? (
                 <Redirect to="/login" />
               ) : (
                 <Profile {...userInfo} />
@@ -86,6 +91,7 @@ function App({ userInfo, addUser }) {
 const mapStateToProps = (state) => {
   return {
     userInfo: state.userInfo,
+    isAuthenticated: state.isAuthenticated,
   };
 };
 

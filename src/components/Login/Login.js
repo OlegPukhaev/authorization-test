@@ -1,11 +1,11 @@
 import React from "react";
 
-function Login() {
+function Login({ onClickSignIn }) {
   return (
     <section className="mainSection__login">
       <div className="formContainer">
         <h2>Login:</h2>
-        <form>
+        <form onSubmit={onClickSignIn}>
           <input type="email" placeholder="E-mail" />
           <input type="current-password" placeholder="Password" />
           <button type="submit">Login</button>
