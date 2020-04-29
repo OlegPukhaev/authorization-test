@@ -11,12 +11,13 @@ import {
 import Login from "./components/Login";
 import Register from "./components/Register";
 import Profile from "./components/Profile";
+import Header from "./components/Header";
 
 import * as actionCreator from "./actions";
 // import { bindActionCreators } from "redux";
 
 const fakeAuth = {
-  isAuthenticated: true,
+  isAuthenticated: false,
   login() {
     this.isAuthenticated = true;
   },
@@ -50,28 +51,7 @@ function App({ userInfo, addUser }) {
   return (
     <Router>
       <div className="mainContainer">
-        <header className="mainHeader">
-          <h1>Header</h1>
-          <nav className="mainNavigation">
-            <ul className="mainNavigation_items">
-              <li className="mainNavigation_item">
-                <Link className="linkStyle" to="/login">
-                  Login
-                </Link>
-              </li>
-              <li className="mainNavigation_item">
-                <Link className="linkStyle" to="/register">
-                  Register
-                </Link>
-              </li>
-              <li className="mainNavigation_item">
-                <Link className="linkStyle" to="/profile">
-                  Profile
-                </Link>
-              </li>
-            </ul>
-          </nav>
-        </header>
+        <Header fakeAuth={fakeAuth} />
         <section className="mainSection">
           <Switch>
             <Route path="/login">

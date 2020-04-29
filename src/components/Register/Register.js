@@ -4,7 +4,7 @@ function Register({ onChangeUpdateForm, onClickSubmitForm, data }) {
   return (
     <section className="mainSection__register">
       <div className="formContainer">
-        <h2>Login:</h2>
+        <h2>Registration:</h2>
         <form onSubmit={onClickSubmitForm}>
           <input
             name="email"
