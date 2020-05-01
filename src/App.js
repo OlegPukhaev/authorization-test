@@ -1,12 +1,7 @@
 import React, { useState } from "react";
 import "./App.css";
 import { connect } from "react-redux";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Redirect,
-} from "react-router-dom";
+import { Switch, Route, Redirect } from "react-router-dom";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import Profile from "./components/Profile";
@@ -47,43 +42,41 @@ function App({ userInfo, addUser, isAuthenticated, signIn, signOut }) {
   };
 
   return (
-    <Router>
-      <div className="mainContainer">
-        <Header
-          isAuthenticated={isAuthenticated}
-          onClickSignOut={onClickSignOut}
-        />
-        <section className="mainSection">
-          <Switch>
-            <Route path="/login">
-              {isAuthenticated ? (
-                <Redirect to="/profile" />
-              ) : (
-                <Login onClickSignIn={onClickSignIn} />
-              )}
-            </Route>
-            <Route path="/register">
-              {isAuthenticated ? (
-                <Redirect to="/profile" />
-              ) : (
-                <Register
-                  onChangeUpdateForm={onChangeUpdateForm}
-                  onClickSubmitForm={onClickSubmitForm}
-                  data={data}
-                />
-              )}
-            </Route>
-            <Route path="/profile">
-              {!isAuthenticated ? (
-                <Redirect to="/login" />
-              ) : (
-                <Profile {...userInfo} />
-              )}
-            </Route>
-          </Switch>
-        </section>
-      </div>
-    </Router>
+    <div className="mainContainer">
+      <Header
+        isAuthenticated={isAuthenticated}
+        onClickSignOut={onClickSignOut}
+      />
+      <section className="mainSection">
+        <Switch>
+          <Route path="/login">
+            {isAuthenticated ? (
+              <Redirect to="/profile" />
+            ) : (
+              <Login onClickSignIn={onClickSignIn} />
+            )}
+          </Route>
+          <Route path="/register">
+            {isAuthenticated ? (
+              <Redirect to="/profile" />
+            ) : (
+              <Register
+                onChangeUpdateForm={onChangeUpdateForm}
+                onClickSubmitForm={onClickSubmitForm}
+                data={data}
+              />
+            )}
+          </Route>
+          <Route path="/profile">
+            {!isAuthenticated ? (
+              <Redirect to="/login" />
+            ) : (
+              <Profile {...userInfo} />
+            )}
+          </Route>
+        </Switch>
+      </section>
+    </div>
   );
 }
 

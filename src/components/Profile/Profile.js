@@ -50,9 +50,6 @@ class Profile extends Component {
               <span>Name:</span> {name}
             </li>
             <li>
-              <span>Context Name:</span> {this.context.name}
-            </li>
-            <li>
               <span>Email:</span> {email}
             </li>
             <li>
