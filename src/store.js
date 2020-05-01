@@ -1,12 +1,6 @@
-// import { createStore, bindActionCreators } from "redux";
-// import reducer from "./reducer";
-// import * as actions from ".action";
+import { createStore } from "redux";
+import reducer from "./reducers/reducer";
 
-// const store = createStore(reducer);
-// const { dispatch } = store;
+const store = createStore(reducer);
 
-// const { inc, dec } = bindActionCreators(actions, dispatch);
-
-// const update = () => {};
-
-// store.subscribe(update); //вызываем функцию update() когда обновился store
+export default store;

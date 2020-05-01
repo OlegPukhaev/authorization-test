@@ -1,6 +1,8 @@
 import React from "react";
+import WithAuthorization from "../Hoc/WithAuthorization";
 
-function Login({ onClickSignIn }) {
+function Login({ onClickSignIn, isAuthenticated }) {
+  console.log("Is Auth", isAuthenticated);
   return (
     <section className="mainSection__login">
       <div className="formContainer">
@@ -15,4 +17,4 @@ function Login({ onClickSignIn }) {
   );
 }
 
-export default Login;
+export default WithAuthorization(Login);

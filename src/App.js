@@ -12,7 +12,7 @@ import Register from "./components/Register";
 import Profile from "./components/Profile";
 import Header from "./components/Header";
 
-import * as actionCreator from "./actions";
+import * as actionCreator from "./actions/actions";
 
 function App({ userInfo, addUser, isAuthenticated, signIn, signOut }) {
   const [data, formDataUpdate] = useState({
