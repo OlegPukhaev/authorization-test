@@ -30,7 +30,7 @@ import MyContext from "../Context";
 //               </ul>
 //             </article>
 //           </section>
-//         );
+//         );0
 //       }}
 //     </MyContext.Consumer>
 //   );
@@ -48,9 +48,6 @@ class Profile extends Component {
           <ul className="profile">
             <li>
               <span>Name:</span> {name}
-            </li>
-            <li>
-              <span>Context Name:</span> {this.context.name}
             </li>
             <li>
               <span>Email:</span> {email}
