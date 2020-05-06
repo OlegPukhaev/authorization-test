@@ -4,30 +4,17 @@ import { Link } from "react-router-dom";
 const Header = ({ isAuthenticated, onClickSignOut }) => {
   return (
     <header className="mainHeader">
-      <h1>Header</h1>
+      <h1>Products Page</h1>
       <nav className="mainNavigation">
         <ul className="mainNavigation_items">
           <li className="mainNavigation_item">
-            <Link
-              className="linkStyle"
-              to="/login"
-              onClick={isAuthenticated ? onClickSignOut : null}
-            >
-              {isAuthenticated ? "Logout" : "Login"}
+            <Link className="linkStyle" to="/products">
+              Товары
             </Link>
           </li>
-          {!isAuthenticated ? (
-            <li className="mainNavigation_item">
-              <Link className="linkStyle" to="/register">
-                Register
-              </Link>
-            </li>
-          ) : (
-            ""
-          )}
           <li className="mainNavigation_item">
-            <Link className="linkStyle" to="/profile">
-              Profile
+            <Link className="linkStyle" to="/finances">
+              Финансы
             </Link>
           </li>
         </ul>

@@ -1,11 +1,25 @@
 //action creators
 // export const addUser = (value) => ({ type: "ADD" });
-export const signIn = () => ({ type: "SIGN_IN" });
-export const signOut = () => ({ type: "SIGN_OUT" });
+const signIn = () => ({ type: "SIGN_IN" });
+const signOut = () => ({ type: "SIGN_OUT" });
 
-export const addUser = (value) => {
+const addUser = (value) => {
   return {
     type: "ADD",
-    value: value,
+    payload: value,
   };
 };
+
+const menuLoaded = (newMenu) => {
+  return {
+    type: "MENU_LOADED",
+    payload: newMenu,
+  };
+};
+const menuRequested = () => {
+  return {
+    type: "MENU_REQUESTED",
+  };
+};
+
+export { menuLoaded, menuRequested, addUser, signIn, signOut };
