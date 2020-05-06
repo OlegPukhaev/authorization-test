@@ -6,8 +6,6 @@ import ProductList from "./product-list";
 import ProductCard from "./product-card";
 
 const MainPage = () => {
-  // let { path } = useRouteMatch();
-  // let { id } = useParams();
   return (
     <section className="mainSection">
       <Switch>
