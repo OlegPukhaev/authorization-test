@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import ProductList from "./product-list";
 
 const Products = () => {
   return (
