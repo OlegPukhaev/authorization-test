@@ -2,18 +2,22 @@
   "caregories": [
     {
       "name": "Казаны",
+      "folder": "kazans",
       "id": 1
     },
     {
       "name": "Гитары",
+      "folder": "guitars",
       "id": 2
     },
     {
       "name": "Шуруповерты",
+      "folder": "drell",
       "id": 3
     },
     {
       "name": "Палатки",
+      "folder": "palatka",
       "id": 4
     }
   ],

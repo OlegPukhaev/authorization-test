@@ -26,8 +26,12 @@ const Products = ({ RestoService, productCategoriesLoaded, categories }) => {
         {categories.map((item) => {
           return (
             <li className="menuList__item" key={`cat${item.id}`}>
-              <Link id={item.id} to={`${url}/guitars`}>
-                {item.name}
+              <Link
+                id={item.id}
+                className="menuList__link"
+                to={`${url}/${item.folder}`}
+              >
+                {item.name} 20шт.
               </Link>
             </li>
           );
