@@ -7,7 +7,7 @@ const initialState = {
   },
   categories: [],
   products: [],
-  loading: true,
+  loading: false,
 };
 
 const reducer = (state = initialState, action) => {
@@ -25,9 +25,9 @@ const reducer = (state = initialState, action) => {
         products: action.payload,
         loading: false,
       };
-    case "MENU_REQUESTED":
+    case "PRODUCT_REQUESTED":
       return {
-        menu: state.menu,
+        ...state,
         loading: true,
       };
 

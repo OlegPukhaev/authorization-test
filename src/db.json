@@ -31,7 +31,7 @@
       "size": "7/8",
       "type": "Accoustic",
       "priceOpt": 1950,
-      "pirceRozn": 3800
+      "priceRozn": 3800
     },
     {
       "id": 2,
@@ -42,7 +42,7 @@
       "size": "4/4",
       "type": "Accoustic",
       "priceOpt": 2300,
-      "pirceRozn": 5100
+      "priceRozn": 5100
     },
     {
       "id": 3,
@@ -53,7 +53,7 @@
       "size": "4.5л",
       "type": "",
       "priceOpt": 950,
-      "pirceRozn": 1800
+      "priceRozn": 1800
     },
     {
       "id": 4,
@@ -64,7 +64,7 @@
       "size": "6л",
       "type": "",
       "priceOpt": 1100,
-      "pirceRozn": 2200
+      "priceRozn": 2200
     },
     {
       "id": 5,
@@ -75,7 +75,7 @@
       "size": "8л",
       "type": "",
       "priceOpt": 1300,
-      "pirceRozn": 2800
+      "priceRozn": 2800
     }
   ]
 }

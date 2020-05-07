@@ -4,8 +4,9 @@ import Products from "./products";
 import Finances from "./finances";
 import ProductList from "./product-list";
 import ProductCard from "./product-card";
+import { connect } from "react-redux";
 
-const MainPage = () => {
+const MainPage = ({ loading }) => {
   return (
     <section className="mainSection">
       <Switch>
@@ -27,4 +28,10 @@ const MainPage = () => {
   );
 };
 
-export default MainPage;
+const mapStateToProps = (state) => {
+  return {
+    loading: state.loading,
+  };
+};
+
+export default connect(mapStateToProps)(MainPage);

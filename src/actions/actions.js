@@ -10,10 +10,10 @@ const productListLoaded = (products) => {
     payload: products,
   };
 };
-const menuRequested = () => {
+const productRequested = () => {
   return {
-    type: "MENU_REQUESTED",
+    type: "PRODUCT_REQUESTED",
   };
 };
 
-export { productCategoriesLoaded, productListLoaded, menuRequested };
+export { productCategoriesLoaded, productListLoaded, productRequested };

@@ -3,16 +3,20 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { useParams, useRouteMatch } from "react-router-dom";
 import WithRestoService from "../hoc/with-resto-service";
-import { productListLoaded } from "../../actions/actions";
+import { productListLoaded, productRequested } from "../../actions/actions";
 
-const ProductList = ({ RestoService, productListLoaded, products }) => {
+const ProductList = ({
+  RestoService,
+  productListLoaded,
+  products,
+  productRequested,
+  loading,
+}) => {
   let { catId } = useParams();
   let { url } = useRouteMatch();
-  // console.log("url", url);
-  // console.log("path", path);
-  // console.log("cacId", catId);
 
   useEffect(() => {
+    productRequested();
     RestoService.getProductByCatId(catId)
       .then((res) => {
         productListLoaded(res);
@@ -23,19 +27,25 @@ const ProductList = ({ RestoService, productListLoaded, products }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  console.log("products = by id", products);
+  if (loading) return <section>Loadin in progress...</section>;
 
   return (
     <section>
       <h1>Список продуктов в категории {catId}</h1>
-      <ul>
-        <li>
-          <Link to={`${url}/1`}>{catId} 1</Link>
-          {/* <Link to="/products/guitars/1">Гитары1</Link> */}
-        </li>
-        <li>
-          <Link to={`${url}/2`}>{catId} 2</Link>
-        </li>
+      <ul className="menuList">
+        {products.map((item) => {
+          return (
+            <li
+              className="menuList__item"
+              key={`cat${item.id}`}
+              key={`product${item.id}`}
+            >
+              <Link className="menuList__link" to={`${url}/${item.id}`}>
+                {item.name} - {item.size} - {item.priceRozn}руб.
+              </Link>
+            </li>
+          );
+        })}
       </ul>
     </section>
   );
@@ -44,11 +54,13 @@ const ProductList = ({ RestoService, productListLoaded, products }) => {
 const mapStateToProps = (state) => {
   return {
     products: state.products,
+    loading: state.loading,
   };
 };
 
 const mapDispathcToProps = {
   productListLoaded,
+  productRequested,
 };
 
 export default WithRestoService()(

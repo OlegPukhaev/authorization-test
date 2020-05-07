@@ -5,6 +5,7 @@ import WithRestoService from "../hoc/with-resto-service";
 import {
   productCategoriesLoaded,
   productListLoaded,
+  productRequested,
 } from "../../actions/actions";
 import "./style.css";
 
@@ -12,13 +13,16 @@ const Products = ({
   RestoService,
   productCategoriesLoaded,
   productListLoaded,
+  productRequested,
   categories,
   products,
+  loading,
 }) => {
   let { url } = useRouteMatch();
-  console.log("products", products);
+  // console.log("products", products);
 
   useEffect(() => {
+    productRequested();
     RestoService.getProductCategories()
       .then((res) => {
         productCategoriesLoaded(res);
@@ -26,15 +30,10 @@ const Products = ({
       .catch((err) => {
         console.log("Some error");
       });
-    RestoService.getProductList()
-      .then((res) => {
-        productListLoaded(res);
-      })
-      .catch((err) => {
-        console.log("Some error");
-      });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  if (loading) return <section>Loadin in progress...</section>;
 
   return (
     <section>
@@ -62,12 +61,14 @@ const mapStateToProps = (state) => {
   return {
     categories: state.categories,
     products: state.products,
+    loading: state.loading,
   };
 };
 
 const mapDispatchToProps = {
   productCategoriesLoaded,
   productListLoaded,
+  productRequested,
 };
 
 export default WithRestoService()(
