@@ -1,19 +1,7 @@
-//action creators
-// export const addUser = (value) => ({ type: "ADD" });
-const signIn = () => ({ type: "SIGN_IN" });
-const signOut = () => ({ type: "SIGN_OUT" });
-
-const addUser = (value) => {
+const productCategoriesLoaded = (categories) => {
   return {
-    type: "ADD",
-    payload: value,
-  };
-};
-
-const menuLoaded = (newMenu) => {
-  return {
-    type: "MENU_LOADED",
-    payload: newMenu,
+    type: "PRODUCT_CATEGORIES_LOADED",
+    payload: categories,
   };
 };
 const menuRequested = () => {
@@ -22,4 +10,4 @@ const menuRequested = () => {
   };
 };
 
-export { menuLoaded, menuRequested, addUser, signIn, signOut };
+export { productCategoriesLoaded, menuRequested };

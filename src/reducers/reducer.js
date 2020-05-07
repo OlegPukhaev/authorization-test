@@ -1,31 +1,23 @@
 const initialState = {
   isAuthenticated: true,
-  userInfo: {
+  user: {
+    id: 1,
     name: "Oleg",
     email: "oleg@gmail.com",
-    info:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
   },
-  menu: [],
+  categories: [],
+  products: [],
   loading: true,
 };
 
 const reducer = (state = initialState, action) => {
-  const { value } = action;
+  // const { value } = action;
   switch (action.type) {
-    case "ADD":
-      const newObject = {
-        ...state.userInfo,
-        name: value.name,
-        email: value.email,
-      };
-      return (state = {
-        ...state,
-        userInfo: newObject,
-      });
-    case "MENU_LOADED":
+    case "PRODUCT_CATEGORIES_LOADED":
+      console.log("action payload", action.payload);
       return {
-        menu: action.payload,
+        ...state,
+        categories: action.payload,
         loading: false,
       };
     case "MENU_REQUESTED":
@@ -33,10 +25,7 @@ const reducer = (state = initialState, action) => {
         menu: state.menu,
         loading: true,
       };
-    case "SIGN_IN":
-      return { ...state, isAuthenticated: true };
-    case "SIGN_OUT":
-      return { ...state, isAuthenticated: false };
+
     default:
       return state;
   }
