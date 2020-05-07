@@ -2,16 +2,33 @@ import React, { useEffect } from "react";
 import { Link, useRouteMatch } from "react-router-dom";
 import { connect } from "react-redux";
 import WithRestoService from "../hoc/with-resto-service";
-import { productCategoriesLoaded } from "../../actions/actions";
+import {
+  productCategoriesLoaded,
+  productListLoaded,
+} from "../../actions/actions";
 import "./style.css";
 
-const Products = ({ RestoService, productCategoriesLoaded, categories }) => {
+const Products = ({
+  RestoService,
+  productCategoriesLoaded,
+  productListLoaded,
+  categories,
+  products,
+}) => {
   let { url } = useRouteMatch();
+  console.log("products", products);
 
   useEffect(() => {
     RestoService.getProductCategories()
       .then((res) => {
         productCategoriesLoaded(res);
+      })
+      .catch((err) => {
+        console.log("Some error");
+      });
+    RestoService.getProductList()
+      .then((res) => {
+        productListLoaded(res);
       })
       .catch((err) => {
         console.log("Some error");
@@ -29,7 +46,7 @@ const Products = ({ RestoService, productCategoriesLoaded, categories }) => {
               <Link
                 id={item.id}
                 className="menuList__link"
-                to={`${url}/${item.folder}`}
+                to={`${url}/${item.id}`}
               >
                 {item.name} 20шт.
               </Link>
@@ -44,11 +61,13 @@ const Products = ({ RestoService, productCategoriesLoaded, categories }) => {
 const mapStateToProps = (state) => {
   return {
     categories: state.categories,
+    products: state.products,
   };
 };
 
 const mapDispatchToProps = {
   productCategoriesLoaded,
+  productListLoaded,
 };
 
 export default WithRestoService()(

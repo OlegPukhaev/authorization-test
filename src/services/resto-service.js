@@ -14,4 +14,10 @@ export default class RestoService {
   async getProductCategories() {
     return await this.getResourse("/caregories/");
   }
+  async getProductList() {
+    return await this.getResourse("/products/");
+  }
+  async getProductByCatId(catId) {
+    return await this.getResourse(`/products/?catId=${catId}`);
+  }
 }

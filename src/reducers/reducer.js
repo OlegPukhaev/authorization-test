@@ -14,10 +14,15 @@ const reducer = (state = initialState, action) => {
   // const { value } = action;
   switch (action.type) {
     case "PRODUCT_CATEGORIES_LOADED":
-      console.log("action payload", action.payload);
       return {
         ...state,
         categories: action.payload,
+        loading: false,
+      };
+    case "PRODUCT_LIST_LOADED":
+      return {
+        ...state,
+        products: action.payload,
         loading: false,
       };
     case "MENU_REQUESTED":
