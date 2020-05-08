@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import Header from "./components/Header";
 import LeftSideMenu from "./components/LeftSideMenu";
-import MainPage from "./components/pages/main-page";
+import Pages from "./components/pages";
 
 function App({ RestoService }) {
   return (
@@ -13,7 +13,7 @@ function App({ RestoService }) {
           <LeftSideMenu />
         </div>
         <div className="mainPageContainer">
-          <MainPage />
+          <Pages />
         </div>
       </div>
     </div>
