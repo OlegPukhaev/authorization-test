@@ -19,6 +19,7 @@ const ProductList = ({
     productRequested();
     RestoService.getProductByCatId(catId)
       .then((res) => {
+        console.log("res", res);
         productListLoaded(res);
       })
       .catch((err) => {
@@ -35,11 +36,7 @@ const ProductList = ({
       <ul className="menuList">
         {products.map((item) => {
           return (
-            <li
-              className="menuList__item"
-              key={`cat${item.id}`}
-              key={`product${item.id}`}
-            >
+            <li className="menuList__item" key={`product${item.id}`}>
               <Link className="menuList__link" to={`${url}/${item.id}`}>
                 {item.name} - {item.size} - {item.priceRozn}руб.
               </Link>

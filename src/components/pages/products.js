@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Link, useRouteMatch } from "react-router-dom";
+import { Switch, Route, Link, useRouteMatch } from "react-router-dom";
 import { connect } from "react-redux";
 import WithRestoService from "../hoc/with-resto-service";
 import {
@@ -8,6 +8,9 @@ import {
   productRequested,
 } from "../../actions/actions";
 import "./style.css";
+import ProductList from "./product-list";
+import ProductCard from "./product-card";
+import ProductCategories from "./product-categories";
 
 const Products = ({
   RestoService,
@@ -37,22 +40,17 @@ const Products = ({
 
   return (
     <section>
-      <h1>Категории товаров</h1>
-      <ul className="menuList">
-        {categories.map((item) => {
-          return (
-            <li className="menuList__item" key={`cat${item.id}`}>
-              <Link
-                id={item.id}
-                className="menuList__link"
-                to={`${url}/${item.id}`}
-              >
-                {item.name} 20шт.
-              </Link>
-            </li>
-          );
-        })}
-      </ul>
+      <Switch>
+        <Route exact path="/products/">
+          <ProductCategories />
+        </Route>
+        <Route exact path="/products/:catId/">
+          <ProductList />
+        </Route>
+        <Route path="/products/:catId/:productId">
+          <ProductCard />
+        </Route>
+      </Switch>
     </section>
   );
 };
