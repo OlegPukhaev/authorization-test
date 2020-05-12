@@ -1,8 +1,7 @@
 import React from "react";
-import { Route, Switch } from "react-router-dom";
-import Products from "./products";
-import Finances from "./finances";
-import { connect } from "react-redux";
+// import { Route, Switch } from "react-router-dom";
+// import Products from "./products";
+// import Finances from "./finances";
 
 const MainPage = ({ loading }) => {
   return (
@@ -21,10 +20,4 @@ const MainPage = ({ loading }) => {
   );
 };
 
-const mapStateToProps = (state) => {
-  return {
-    loading: state.loading,
-  };
-};
-
-export default connect(mapStateToProps)(MainPage);
+export default MainPage;

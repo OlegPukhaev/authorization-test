@@ -1,22 +1,19 @@
 const initialState = {
-  isAuthenticated: true,
-  user: {
-    id: 1,
-    name: "Oleg",
-    email: "oleg@gmail.com",
+  menu: {
+    categories: [],
+    finMenu: [],
   },
-  categories: [],
-  products: [],
   loading: false,
 };
 
 const reducer = (state = initialState, action) => {
   // const { value } = action;
   switch (action.type) {
-    case "PRODUCT_CATEGORIES_LOADED":
+    case "MENU_LOADED":
       return {
         ...state,
-        categories: action.payload,
+        menu: { ...state.menu, ...action.payload },
+
         loading: false,
       };
     case "PRODUCT_LIST_LOADED":

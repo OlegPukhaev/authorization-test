@@ -3,7 +3,8 @@ import "./style.css";
 import MenyListItems from "../MenuListItems";
 import { Route, Switch, Redirect } from "react-router-dom";
 
-const LeftSideMenu = () => {
+const LeftSideMenu = ({ menu }) => {
+  const { categories, finMenu } = menu;
   return (
     <div className="container">
       <Switch>
@@ -12,18 +13,16 @@ const LeftSideMenu = () => {
         </Route>
         <Route exact path="/products">
           <ul className="menuList">
-            <MenyListItems name="Гитары" />
-            <MenyListItems name="Казаны" />
-            <MenyListItems name="Афганские казаны" />
-            <MenyListItems name="Шуруповерты" />
-            <MenyListItems name="Палатки" />
+            {categories.map((item) => (
+              <MenyListItems name={item.name} key={`list${item.id}`} />
+            ))}
           </ul>
         </Route>
         <Route exact path="/finances">
           <ul className="menuList">
-            <MenyListItems name="Отчет" />
-            <MenyListItems name="Прогноз" />
-            <MenyListItems name="Баланс" />
+            {finMenu.map((item) => (
+              <MenyListItems name={item.name} key={`list${item.id}`} />
+            ))}
           </ul>
         </Route>
         <Route path="*">

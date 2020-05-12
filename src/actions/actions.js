@@ -1,13 +1,13 @@
-const productCategoriesLoaded = (categories) => {
+const menuLoaded = (value) => {
   return {
-    type: "PRODUCT_CATEGORIES_LOADED",
-    payload: categories,
+    type: "MENU_LOADED",
+    payload: value,
   };
 };
-const productListLoaded = (products) => {
+const productListLoaded = (value) => {
   return {
     type: "PRODUCT_LIST_LOADED",
-    payload: products,
+    payload: value,
   };
 };
 const productRequested = () => {
@@ -16,4 +16,4 @@ const productRequested = () => {
   };
 };
 
-export { productCategoriesLoaded, productListLoaded, productRequested };
+export { menuLoaded, productListLoaded, productRequested };

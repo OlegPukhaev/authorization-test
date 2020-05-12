@@ -3,7 +3,7 @@ import { Switch, Route, Link, useRouteMatch } from "react-router-dom";
 import { connect } from "react-redux";
 import WithRestoService from "../hoc/with-resto-service";
 import {
-  productCategoriesLoaded,
+  // productCategoriesLoaded,
   productListLoaded,
   productRequested,
 } from "../../actions/actions";
@@ -28,7 +28,7 @@ const Products = ({
     productRequested();
     RestoService.getProductCategories()
       .then((res) => {
-        productCategoriesLoaded(res);
+        // productCategoriesLoaded(res);
       })
       .catch((err) => {
         console.log("Some error");
@@ -64,7 +64,7 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = {
-  productCategoriesLoaded,
+  // productCategoriesLoaded,
   productListLoaded,
   productRequested,
 };
