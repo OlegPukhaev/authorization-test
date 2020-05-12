@@ -1,21 +1,18 @@
 import React from "react";
-// import { Route, Switch } from "react-router-dom";
-// import Products from "./products";
-// import Finances from "./finances";
+import { Route, Switch, useParams } from "react-router-dom";
+import ProductList from "./ProductList";
 
 const MainPage = ({ loading }) => {
   return (
     <section className="mainSection">
-      <h1>Main Section</h1>
-      {/* <Switch>
-        <Route exact path="/" />
-        <Route exact path="/products">
-          <Products />
+      <Switch>
+        <Route path="/products/:id">
+          <ProductList />
         </Route>
         <Route path="/finances">
-          <Finances />
+          <h1>Finances</h1>
         </Route>
-      </Switch> */}
+      </Switch>
     </section>
   );
 };

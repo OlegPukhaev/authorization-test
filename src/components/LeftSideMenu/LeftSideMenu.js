@@ -11,22 +11,19 @@ const LeftSideMenu = ({ menu }) => {
         <Route exact path="/">
           <Redirect to="/products" />
         </Route>
-        <Route exact path="/products">
+        <Route path="/products">
           <ul className="menuList">
             {categories.map((item) => (
-              <MenyListItems name={item.name} key={`list${item.id}`} />
+              <MenyListItems key={`categories${item.id}`} item={item} />
             ))}
           </ul>
         </Route>
-        <Route exact path="/finances">
+        <Route path="/finances">
           <ul className="menuList">
             {finMenu.map((item) => (
-              <MenyListItems name={item.name} key={`list${item.id}`} />
+              <MenyListItems key={`finmenu${item.id}`} item={item} />
             ))}
           </ul>
-        </Route>
-        <Route path="*">
-          <Redirect to="/products" />
         </Route>
       </Switch>
     </div>
