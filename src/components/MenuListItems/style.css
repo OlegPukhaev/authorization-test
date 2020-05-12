@@ -1,0 +1,13 @@
+.menyList__items {
+  text-align: left;
+  padding: 8px;
+  display: block;
+  width: 100%;
+  border-bottom: 1px grey solid;
+  cursor: pointer;
+}
+
+.menyList__items:hover {
+  font-weight: bolder;
+  transition: 0.5s;
+}

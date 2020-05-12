@@ -21,6 +21,23 @@
       "id": 4
     }
   ],
+  "finMenu": [
+    {
+      "name": "Отчет",
+      "folder": "otchet",
+      "id": 1
+    },
+    {
+      "name": "Прогноз",
+      "folder": "prognoz",
+      "id": 2
+    },
+    {
+      "name": "Баланс",
+      "folder": "balance",
+      "id": 3
+    }
+  ],
   "products": [
     {
       "id": 1,
