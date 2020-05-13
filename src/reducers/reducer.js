@@ -3,6 +3,7 @@ const initialState = {
     categories: [],
     finMenu: [],
   },
+  products: [],
   loading: false,
 };
 

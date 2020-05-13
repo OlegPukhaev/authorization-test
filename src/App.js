@@ -5,9 +5,9 @@ import LeftSideMenu from "./components/LeftSideMenu";
 import Pages from "./components/pages";
 import { connect } from "react-redux";
 import WithRestoService from "./components/hoc/with-resto-service";
-import { menuLoaded } from "./actions/actions";
+import { menuLoaded, productListLoaded } from "./actions/actions";
 
-function App({ RestoService, menuLoaded, menu }) {
+function App({ RestoService, menuLoaded, productListLoaded, menu }) {
   useEffect(() => {
     RestoService.getMenu()
       .then((res) => {
@@ -16,9 +16,15 @@ function App({ RestoService, menuLoaded, menu }) {
       .catch((err) => {
         console.log("Some error");
       });
+    RestoService.getProductList()
+      .then((res) => {
+        productListLoaded(res);
+      })
+      .catch((err) => {
+        console.log("Some error");
+      });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  // console.log("menu", menu.caregories);
   return (
     <div className="mainContainer">
       <Header />
@@ -35,7 +41,6 @@ function App({ RestoService, menuLoaded, menu }) {
 }
 
 const mapStateToProps = (state) => {
-  // console.log("state", state.menu);
   return {
     menu: state.menu,
   };
@@ -43,6 +48,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = {
   menuLoaded,
+  productListLoaded,
 };
 
 export default WithRestoService()(

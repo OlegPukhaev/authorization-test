@@ -3,11 +3,10 @@ import "./style.css";
 import { Link, useRouteMatch } from "react-router-dom";
 
 const MenuListItems = ({ item }) => {
-  const { path, url } = useRouteMatch();
-  console.log("path", path, url);
+  const { path } = useRouteMatch();
   return (
     <li id={item.id} key={`name${item.id}`} className="menyList__items">
-      <Link to={`${path}/${item.folder}`}>{item.name}</Link>
+      <Link to={`${path}/${item.id}`}>{item.name}</Link>
     </li>
   );
 };

@@ -3,8 +3,6 @@ import { Route, Switch } from "react-router-dom";
 import ProductList from "./ProductList";
 
 const MainPage = () => {
-  // console.log("useRouteMatch =>", useRouteMatch());
-  // console.log("useParams =>", useParams());
   return (
     <section className="mainSection">
       <Switch>

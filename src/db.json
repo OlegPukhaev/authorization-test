@@ -26,17 +26,17 @@
       {
         "name": "Отчет",
         "folder": "otchet",
-        "id": 1
+        "id": 11
       },
       {
         "name": "Прогноз",
         "folder": "prognoz",
-        "id": 2
+        "id": 22
       },
       {
         "name": "Баланс",
         "folder": "balance",
-        "id": 3
+        "id": 33
       }
     ]
   },
