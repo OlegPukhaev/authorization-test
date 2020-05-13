@@ -96,6 +96,28 @@
       "type": "",
       "priceOpt": 1300,
       "priceRozn": 2800
+    },
+    {
+      "id": 6,
+      "catId": 3,
+      "name": "Шуруповерт DeWalt",
+      "model": "770DE 24V",
+      "color": "Yello",
+      "size": "",
+      "type": "",
+      "priceOpt": 1300,
+      "priceRozn": 4000
+    },
+    {
+      "id": 7,
+      "catId": 3,
+      "name": "Шуруповерт DeWalt",
+      "model": "770DE 18V",
+      "color": "Yello",
+      "size": "",
+      "type": "",
+      "priceOpt": 1300,
+      "priceRozn": 4555
     }
   ]
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import WithAuthorization from "../hoc/WithAuthorization";
+import WithAuthorization from "../../hoc/WithAuthorization";
 
 function Login({ onClickSignIn, isAuthenticated }) {
   console.log("Is Auth", isAuthenticated);

@@ -23,7 +23,8 @@ const ProductList = ({ products, categories }) => {
             return (
               <li key={`listItem${item.id}`} className="productListItem">
                 {item.name} {item.model} {item.color} {item.size}{" "}
-                {item.priceRozn}руб.
+                {item.priceRozn}руб. - <a href="3">Add+</a> -{" "}
+                <a href="3">Del</a>
               </li>
             );
           })}
