@@ -1,16 +1,19 @@
 import React from "react";
-import { Route, Switch, useParams } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import ProductList from "./ProductList";
 
-const MainPage = ({ loading }) => {
+const MainPage = () => {
+  // console.log("useRouteMatch =>", useRouteMatch());
+  // console.log("useParams =>", useParams());
   return (
     <section className="mainSection">
       <Switch>
-        <Route path="/products/:id">
+        <Route path={`products`} />
+        <Route path={`/products/:id`}>
           <ProductList />
         </Route>
-        <Route path="/finances">
-          <h1>Finances</h1>
+        <Route path="/finances/:id">
+          <ProductList />
         </Route>
       </Switch>
     </section>
