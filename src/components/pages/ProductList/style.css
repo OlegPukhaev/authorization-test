@@ -1,19 +1,21 @@
 .productContainer {
   height: 100%;
+  padding: 8px;
 }
 
 .productListItems {
   list-style-type: none;
-  padding: 4px;
+  /* padding: 4px; */
 }
 .productListItem {
-  padding: 4px 4px;
+  padding: 8px;
   text-align: left;
 }
 
 .listItemHeader {
   font-weight: bolder;
   font-size: 1.2rem;
+  background-color: #ddd;
 }
 .productListItem:nth-child(2n + 1) {
   background-color: rgb(221, 221, 221);

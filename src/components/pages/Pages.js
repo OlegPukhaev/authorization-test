@@ -1,10 +1,12 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
 import ProductList from "./ProductList";
+import ProductCard from "./ProductCard";
 import HomePage from "./HomePage";
 import "./style.css";
+import { connect } from "react-redux";
 
-const MainPage = () => {
+const MainPage = ({ products, categories }) => {
   return (
     <section className="mainSection">
       <Switch>
@@ -12,10 +14,10 @@ const MainPage = () => {
           <HomePage data="Welcome here!" />
         </Route>
         <Route exact path={`/products/:id`}>
-          <ProductList />
+          <ProductList products={products} categories={categories} />
         </Route>
-        <Route path={`/products/:id/:prId`}>
-          <HomePage data="Product Card here" />
+        <Route path={`/products/:id/:productId`}>
+          <ProductCard products={products} />
         </Route>
         <Route path="/finances/:id">
           <ProductList />
@@ -25,4 +27,13 @@ const MainPage = () => {
   );
 };
 
-export default MainPage;
+const mapStateToProps = (state) => {
+  return {
+    products: state.products,
+    categories: state.menu.categories,
+  };
+};
+
+const mapDispatchToProps = {};
+
+export default connect(mapStateToProps, mapDispatchToProps)(MainPage);

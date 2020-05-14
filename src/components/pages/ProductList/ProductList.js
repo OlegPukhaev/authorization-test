@@ -1,13 +1,13 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams, useRouteMatch } from "react-router-dom";
+import Spinner from "../../spinner";
 import "./style.css";
-import { connect } from "react-redux";
 
 const ProductList = ({ products, categories }) => {
   const { id } = useParams();
+  const { url } = useRouteMatch();
 
-  if (!products && !categories)
-    return <div className="productContainer">Loading...</div>;
+  if (!products && !categories) return <Spinner />;
 
   const cat = categories.find((item) => item.id === parseInt(id));
 
@@ -22,9 +22,10 @@ const ProductList = ({ products, categories }) => {
           .map((item) => {
             return (
               <li key={`listItem${item.id}`} className="productListItem">
-                {item.name} {item.model} {item.color} {item.size}{" "}
-                {item.priceRozn}руб. - <a href="3">Add+</a> -{" "}
-                <a href="3">Del</a>
+                <Link to={`${url}/${item.id}`}>
+                  {item.name} {item.model} {item.color} {item.size}{" "}
+                  {item.priceRozn}руб.
+                </Link>
               </li>
             );
           })}
@@ -33,13 +34,5 @@ const ProductList = ({ products, categories }) => {
   );
 };
 
-const mapStateToProps = (state) => {
-  return {
-    products: state.products,
-    categories: state.menu.categories,
-  };
-};
-
-const mapDispatchToProps = {};
-
-export default connect(mapStateToProps, mapDispatchToProps)(ProductList);
+// export default connect(mapStateToProps, mapDispatchToProps)(ProductList);
+export default ProductList;

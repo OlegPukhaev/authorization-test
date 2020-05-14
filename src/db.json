@@ -44,80 +44,51 @@
   "products": [
     {
       "id": 1,
-      "catId": 2,
-      "name": "Belucci",
-      "model": "3820",
-      "color": "Natural",
-      "size": "7/8",
-      "type": "Accoustic",
-      "priceOpt": 1950,
-      "priceRozn": 3800
+      "catId": 1,
+      "name": "Узбекский казан",
+      "model": "6л",
+      "colorPrefix": "Bl",
+      "colorName": "Black",
+      "count": 1,
+      "priceOpt": 980,
+      "priceRozn": 2200,
+      "description": "Алюминиевая крышка , трым пырым пум пуь, а потом туда сюда."
     },
     {
       "id": 2,
       "catId": 2,
-      "name": "Jonsons&Co",
-      "model": "E4011",
-      "color": "Black",
-      "size": "4/4",
-      "type": "Accoustic",
-      "priceOpt": 2300,
-      "priceRozn": 5100
+      "name": "Гитара Belucci",
+      "model": "BC3820BK",
+      "colorPrefix": "BK",
+      "colorName": "Black",
+      "count": 1,
+      "description": "",
+      "priceOpt": 1950,
+      "priceRozn": 3800
     },
     {
       "id": 3,
-      "catId": 1,
-      "name": "Узбекский казан",
-      "model": "",
-      "color": "Black",
-      "size": "4.5л",
-      "type": "",
-      "priceOpt": 950,
-      "priceRozn": 1800
+      "catId": 2,
+      "name": "Гитара Belucci",
+      "model": "BC3820WH",
+      "colorPrefix": "WH",
+      "colorName": "White",
+      "count": 1,
+      "description": "",
+      "priceOpt": 1950,
+      "priceRozn": 3800
     },
     {
       "id": 4,
-      "catId": 1,
-      "name": "Узбекский казан",
-      "model": "",
-      "color": "Black",
-      "size": "6л",
-      "type": "",
-      "priceOpt": 1100,
-      "priceRozn": 2200
-    },
-    {
-      "id": 5,
-      "catId": 1,
-      "name": "Узбекский казан",
-      "model": "",
-      "color": "Black",
-      "size": "8л",
-      "type": "",
-      "priceOpt": 1300,
-      "priceRozn": 2800
-    },
-    {
-      "id": 6,
-      "catId": 3,
-      "name": "Шуруповерт DeWalt",
-      "model": "770DE 24V",
-      "color": "Yello",
-      "size": "",
-      "type": "",
-      "priceOpt": 1300,
-      "priceRozn": 4000
-    },
-    {
-      "id": 7,
-      "catId": 3,
-      "name": "Шуруповерт DeWalt",
-      "model": "770DE 18V",
-      "color": "Yello",
-      "size": "",
-      "type": "",
-      "priceOpt": 1300,
-      "priceRozn": 4555
+      "catId": 2,
+      "name": "Гитара Belucci",
+      "model": "BC3820N",
+      "colorPrefix": "N",
+      "colorName": "Natural",
+      "count": 1,
+      "description": "",
+      "priceOpt": 1950,
+      "priceRozn": 3800
     }
   ]
 }
