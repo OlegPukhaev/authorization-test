@@ -1,3 +1,7 @@
+.mainSection {
+  height: 100%;
+}
+/* 
 .menuList {
   text-align: center;
   list-style-type: none;
@@ -26,4 +30,4 @@
   background-color: black;
   color: white;
   transition: 0.5s;
-}
+} */

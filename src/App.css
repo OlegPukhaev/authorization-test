@@ -38,12 +38,12 @@
   color: rgb(101, 101, 167);
   background-color: white;
 }
-
+/*
 .mainSection {
   width: 100%;
   flex-grow: 1;
-}
-
+} */
+/* 
 .mainSection__login,
 .mainSection__register {
   display: flex;
@@ -51,8 +51,8 @@
   align-items: center;
   width: 100%;
   height: 100%;
-}
-
+} */
+/* 
 .mainSection__profile {
   display: flex;
   flex-direction: column;
@@ -60,7 +60,7 @@
   align-items: center;
   width: 100%;
   height: 100%;
-}
+} */
 
 .formContainer {
   width: 350px;
