@@ -8,7 +8,6 @@ import WithRestoService from "./components/hoc/with-resto-service";
 import { menuLoaded, productListLoaded } from "./actions/actions";
 
 import style from "./App.module.sass";
-// import "./app.sass";
 
 function App({ RestoService, menuLoaded, productListLoaded, menu }) {
   useEffect(() => {
