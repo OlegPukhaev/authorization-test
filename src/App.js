@@ -7,6 +7,9 @@ import { connect } from "react-redux";
 import WithRestoService from "./components/hoc/with-resto-service";
 import { menuLoaded, productListLoaded } from "./actions/actions";
 
+import style from "./App.module.sass";
+// import "./app.sass";
+
 function App({ RestoService, menuLoaded, productListLoaded, menu }) {
   useEffect(() => {
     RestoService.getMenu()
@@ -26,13 +29,13 @@ function App({ RestoService, menuLoaded, productListLoaded, menu }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
-    <div className="mainContainer">
+    <div className={style.mainContainer}>
       <Header />
-      <div className="contentContainer">
-        <div className="leftSideBar">
+      <div className={style.contentContainer}>
+        <div className={style.leftSideBar}>
           <LeftSideMenu menu={menu} />
         </div>
-        <div className="mainPageContainer">
+        <div className={style.mainPageContainer}>
           <Pages />
         </div>
       </div>

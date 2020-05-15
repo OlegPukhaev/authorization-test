@@ -1,4 +1,4 @@
-.mainContainer {
+/* .mainContainer {
   width: 100%;
   height: 100%;
   display: flex;
@@ -7,6 +7,25 @@
   flex-direction: column;
 }
 
+.contentContainer {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+}
+
+.leftSideBar {
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  border-right: slategrey 1px solid;
+}
+
+.mainPageContainer {
+  flex-grow: 1;
+} */
+
+/* other check and delete */
 .mainHeader {
   width: 100%;
   display: flex;
@@ -38,29 +57,6 @@
   color: rgb(101, 101, 167);
   background-color: white;
 }
-/*
-.mainSection {
-  width: 100%;
-  flex-grow: 1;
-} */
-/* 
-.mainSection__login,
-.mainSection__register {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-} */
-/* 
-.mainSection__profile {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-} */
 
 .formContainer {
   width: 350px;
@@ -111,24 +107,6 @@
   font-size: 16px;
   font-weight: bold;
   cursor: pointer;
-}
-
-.contentContainer {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  height: 100%;
-}
-
-.leftSideBar {
-  width: 250px;
-  display: flex;
-  flex-direction: column;
-  border-right: slategrey 1px solid;
-}
-
-.mainPageContainer {
-  flex-grow: 1;
 }
 
 .container {
