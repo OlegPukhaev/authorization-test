@@ -2,15 +2,12 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
-
 import { Provider } from "react-redux";
 import { BrowserRouter as Router } from "react-router-dom";
 import ErrorBoundry from "./components/error-boundry";
 import RestoService from "./services/resto-service";
 import RestoServiceContext from "./components/resto-service-context";
 import store from "./store";
-
-// import MyContext from "./components/Context";
 
 const restoService = new RestoService();
 
